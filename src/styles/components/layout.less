@@ -1,0 +1,22 @@
+.header {
+  &:extend(.ph-8);
+  &:extend(.pv-2);
+}
+
+main {
+  min-height: calc(100vh - 216px);
+  &:extend(.bg-white);
+  &:extend(.pv-2);
+  &:extend(.ph-4);
+}
+
+.menu-title {
+  &:extend(.use-pointer);
+  &:extend(.text-color-white);
+  &.active {
+    &:extend(.text-color-light-blue);
+  }
+  &:hover {
+    &:extend(.text-color-light-blue);
+  }
+}

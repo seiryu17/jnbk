@@ -1,0 +1,189 @@
+@import "~antd/dist/antd.less";
+@import "antd.less";
+@import "./components/layout.less";
+@import "./components/card.less";
+
+@padding-size: 8px;
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  &:extend(.bg-grey);
+}
+
+.make-space(@name, @value) {
+  .p-@{name} {
+    padding: ~"calc(@{value} * @{padding-size})" !important;
+  }
+  .pt-@{name} {
+    padding-top: ~"calc(@{value} * @{padding-size})" !important;
+  }
+  .pl-@{name} {
+    padding-left: ~"calc(@{value} * @{padding-size})" !important;
+  }
+  .pr-@{name} {
+    padding-right: ~"calc(@{value} * @{padding-size})" !important;
+  }
+  .pb-@{name} {
+    padding-bottom: ~"calc(@{value} * @{padding-size})" !important;
+  }
+  .pv-@{name} {
+    padding-top: ~"calc(@{value} * @{padding-size})" !important;
+    padding-bottom: ~"calc(@{value} * @{padding-size})" !important;
+  }
+  .ph-@{name} {
+    padding-left: ~"calc(@{value} * @{padding-size})" !important;
+    padding-right: ~"calc(@{value} * @{padding-size})" !important;
+  }
+  .m-@{name} {
+    margin: ~"calc(@{value} * @{padding-size})" !important;
+  }
+  .mt-@{name} {
+    margin-top: ~"calc(@{value} * @{padding-size})" !important;
+  }
+  .ml-@{name} {
+    margin-left: ~"calc(@{value} * @{padding-size})" !important;
+  }
+  .mr-@{name} {
+    margin-right: ~"calc(@{value} * @{padding-size})" !important;
+  }
+  .mb-@{name} {
+    margin-bottom: ~"calc(@{value} * @{padding-size})" !important;
+  }
+  .mv-@{name} {
+    margin-top: ~"calc(@{value} * @{padding-size})" !important;
+    margin-bottom: ~"calc(@{value} * @{padding-size})" !important;
+  }
+  .mh-@{name} {
+    margin-left: ~"calc(@{value} * @{padding-size})" !important;
+    margin-right: ~"calc(@{value} * @{padding-size})" !important;
+  }
+}
+
+.make-space(@name: 0, @value:0);
+.make-space(@name: 0-15, @value:0.15);
+.make-space(@name: 0-25, @value:0.25);
+.make-space(@name: 0-5, @value:0.5);
+.make-space(@name: 0-75, @value:0.75);
+.make-space(@name: 1, @value:1);
+.make-space(@name: 2, @value:2);
+.make-space(@name: 3, @value:3);
+.make-space(@name: 4, @value:4);
+.make-space(@name: 5, @value:5);
+.make-space(@name: 6, @value:6);
+.make-space(@name: 7, @value:7);
+.make-space(@name: 8, @value:8);
+.make-space(@name: 9, @value:9);
+.make-space(@name: 10, @value:10);
+.make-space(@name: 12, @value:12);
+.make-space(@name: 14, @value:14);
+.make-space(@name: 16, @value:16);
+.make-space(@name: 18, @value:18);
+
+@borders-radius: 2, 4, 8, 12, 20;
+each(@borders-radius, {
+  .border-radius-@{value} {
+    border-radius: ~"@{value}px" !important;
+  }
+});
+
+/*
+ * color pallete
+ */
+@colors: {
+  black: @black;
+  white: @white;
+  grey: @grey;
+  dark-blue: @dark-blue;
+  light-blue: @light-blue;
+  dark-grey: @dark-grey;
+};
+
+each(@colors, {
+  .bg-@{key} {
+    background: @value !important;
+  }
+});
+
+each(@colors, {
+  .text-color-@{key} {
+    color: @value !important;
+  }
+});
+
+each(@colors, {
+  .border-@{key} {
+    border-color: @value !important;
+    border: 1px solid
+  }
+});
+
+@sizes: 8, 12, 16, 18, 20, 24, 28, 32, 36, 40, 48, 60;
+each(@sizes, {
+  .text-size-@{value} {
+    font-size: ~"@{value}px" !important;
+  }
+});
+
+@font-weights: {
+  regular: 400;
+  medium: 600;
+  semibold: 600;
+  bold: 700;
+};
+each(@font-weights, {
+  .text-weight-@{key} {
+    font-family: @font-family;
+    font-weight: @value !important;
+    letter-spacing: -0.006em;
+  }
+});
+
+.w-100 {
+  width: 100%;
+}
+
+.use-pointer {
+  cursor: pointer;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.article-image {
+  position: relative !important;
+}
+
+.detail-article-image {
+  position: relative !important;
+  height: auto;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .detail-article-image {
+    position: relative !important;
+    height: 600px !important;
+    object-fit: cover;
+  }
+}
+
+.ant-rate {
+  font-size: 12px;
+  & .ant-rate-star:not(:last-child) {
+    margin-right: 2px;
+  }
+}

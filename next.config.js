@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+// next.config.js
+const withLess = require("next-with-less");
 
-module.exports = nextConfig
+module.exports = withLess({
+  images: {
+    domains: ["fakestoreapi.com"],
+  },
+  lessLoaderOptions: {
+    /* ... */
+  },
+});
